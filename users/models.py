@@ -16,15 +16,15 @@ ACCOUNT_TYPE_SELECTION = [
 
 
 class RacksUser(AbstractUser):
-    bitnob_id = models.CharField(max_length=100, null=True)
-    username = models.CharField(max_length=29, unique=True)
-    type_of_account = models.CharField(max_length=29, choices=ACCOUNT_TYPE_SELECTION)
+    bitnob_id = models.CharField(max_length=255, null=True)
+    username = models.CharField(max_length=255, unique=True)
+    type_of_account = models.CharField(max_length=255, choices=ACCOUNT_TYPE_SELECTION)
     # We don't need to define the email attribute because is inherited from AbstractUser
-    phone_number = models.CharField(max_length=29)
-    btc_address = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=255)
+    btc_address = models.CharField(max_length=255)
     qr_code = models.ImageField()
-    btc_balance = models.CharField(max_length=29, null=True)
-    naira_balance = models.CharField(max_length=29, null=True)
+    btc_balance = models.CharField(max_length=255, null=True)
+    naira_balance = models.CharField(max_length=255, null=True)
 
     def __str__(self):
         return str(self.username) + " BTC:" + str(self.btc_balance)
@@ -32,11 +32,11 @@ class RacksUser(AbstractUser):
 
 class TransactionInfo(models.Model):
     racks_user = models.ForeignKey(RacksUser, on_delete=models.CASCADE)
-    reference = models.CharField(max_length=29, null=True)
-    address = models.CharField(max_length=100, null=True)
-    transaction_id = models.CharField(max_length=29, null=True)
-    btc_amount = models.CharField(max_length=29, null=True)
-    amount = models.CharField(max_length=29, null=True)
+    reference = models.CharField(max_length=255, null=True)
+    address = models.CharField(max_length=255, null=True)
+    transaction_id = models.CharField(max_length=255, null=True)
+    btc_amount = models.CharField(max_length=255, null=True)
+    amount = models.CharField(max_length=255, null=True)
 
     def __str__(self):
         return str(self.racks_user) + " " + str(self.btc_amount)
