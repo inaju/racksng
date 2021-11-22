@@ -288,3 +288,6 @@ class Tipping:
 # print(lightning.get_invoice(invoice_id=invoice_id))
 
 # # print(tip.tip_user(email="johnny@gmail.com", label="busd", sats=5000))
+
+
+

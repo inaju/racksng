@@ -53,6 +53,7 @@ SITE_ID = 1
 CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -168,3 +169,10 @@ REST_AUTH_SERIALIZERS = {
     "USER_DETAILS_SERIALIZER": "racksapi.serializers.UserDetailSerializer",
     "LOGIN_SERIALIZER": "racksapi.serializers.LoginSerializer",
 }
+
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES["default"].update(db_from_env)
