@@ -51,6 +51,9 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 CORS_ORIGIN_ALLOW_ALL = True
+ALLOWED_HOSTS = [
+    "racksng.herokuapp.com",
+]
 
 MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
