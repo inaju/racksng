@@ -1,0 +1,8 @@
+endpoints.txt
+*.pyc
+*.png
+env.py
+.env
+db.sqlite3
+staticfiles
+migrations
