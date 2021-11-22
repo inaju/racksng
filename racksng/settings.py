@@ -52,7 +52,8 @@ INSTALLED_APPS = [
 SITE_ID = 1
 CORS_ORIGIN_ALLOW_ALL = True
 ALLOWED_HOSTS = [
-    "racksng.herokuapp.com",'127.0.0.1',
+    "racksng.herokuapp.com",
+    "127.0.0.1",
 ]
 
 MIDDLEWARE = [
@@ -155,10 +156,10 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
 ]
 
-'DEFAULT_AUTHENTICATION_CLASSES'= [
-    # 'rest_framework.authentication.SessionAuthentication',
-    'rest_framework.authentication.BasicAuthentication',
-]
+# 'DEFAULT_AUTHENTICATION_CLASSES'= [
+#     # 'rest_framework.authentication.SessionAuthentication',
+#     'rest_framework.authentication.BasicAuthentication',
+# ]
 AUTH_USER_MODEL = "users.RacksUser"
 
 ACCOUNT_AUTHENTICATION_METHOD = "email"
