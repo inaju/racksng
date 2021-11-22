@@ -36,7 +36,7 @@ def send_btc_again(request):
 
     print(send_onchain["data"])
     racks_user = RacksUser.objects.get(email=current_user.email)
-    racks_user.btc_balance -= float("0.00000001") * float(data["amount"])
+    racks_user.btc_balance -= float(0.00000001) * float(data["amount"])
     print(racks_user.btc_balance)
 
     # print(float(0.00000001), type(float(data["amount"])))
@@ -49,7 +49,7 @@ def send_btc_again(request):
     # )
     abs_sum_amount = abs(
         racks_user.btc_balance
-        - (float("0.00000001") * float(data["amount"]) * float(23305515.26))
+        - (float(0.00000001) * float(data["amount"]) * float(23305515.26))
     )
     print(abs_sum_amount)
     racks_user.naira_balance -= abs_sum_amount
