@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 SITE_ID = 1
 CORS_ORIGIN_ALLOW_ALL = True
 ALLOWED_HOSTS = [
-    "racksng.herokuapp.com",
+    "racksng.herokuapp.com",'127.0.0.1',
 ]
 
 MIDDLEWARE = [
