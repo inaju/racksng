@@ -17,14 +17,14 @@ ACCOUNT_TYPE_SELECTION = [
 
 class RacksUser(AbstractUser):
     bitnob_id = models.CharField(max_length=100, null=True)
-    username = models.CharField(max_length=20, unique=True)
-    type_of_account = models.CharField(max_length=20, choices=ACCOUNT_TYPE_SELECTION)
+    username = models.CharField(max_length=100, unique=True)
+    type_of_account = models.CharField(max_length=100, choices=ACCOUNT_TYPE_SELECTION)
     # We don't need to define the email attribute because is inherited from AbstractUser
-    phone_number = models.CharField(max_length=30)
-    btc_address = models.CharField(max_length=50)
+    phone_number = models.CharField(max_length=100)
+    btc_address = models.CharField(max_length=100)
     qr_code = models.ImageField()
-    btc_balance = models.CharField(max_length=30, null=True)
-    naira_balance = models.CharField(max_length=30, null=True)
+    btc_balance = models.CharField(max_length=100, null=True)
+    naira_balance = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return str(self.username) + " BTC:" + str(self.btc_balance)
@@ -35,8 +35,8 @@ class TransactionInfo(models.Model):
     reference = models.CharField(max_length=100, null=True)
     address = models.CharField(max_length=100, null=True)
     transaction_id = models.CharField(max_length=100, null=True)
-    btc_amount = models.CharField(max_length=30, null=True)
-    amount = models.CharField(max_length=30, null=True)
+    btc_amount = models.CharField(max_length=100, null=True)
+    amount = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return str(self.racks_user) + " " + str(self.btc_amount)
