@@ -156,10 +156,19 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
 ]
 
-DEFAULT_AUTHENTICATION_CLASSES= [
-    # 'rest_framework.authentication.SessionAuthentication',
-    'rest_framework.authentication.BasicAuthentication',
-]
+# DEFAULT_AUTHENTICATION_CLASSES= [
+#     # 'rest_framework.authentication.SessionAuthentication',
+#     'rest_framework.authentication.BasicAuthentication',
+# ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+   'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
+}
 AUTH_USER_MODEL = "users.RacksUser"
 
 ACCOUNT_AUTHENTICATION_METHOD = "email"
