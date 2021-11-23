@@ -23,8 +23,8 @@ class RacksUser(AbstractUser):
     phone_number = models.CharField(max_length=255)
     btc_address = models.CharField(max_length=255)
     qr_code = models.ImageField()
-    btc_balance = models.CharField(max_length=255, null=True)
-    naira_balance = models.CharField(max_length=255, null=True)
+    btc_balance = models.FloatField(null=True)
+    naira_balance = models.FloatField(null=True)
 
     def __str__(self):
         return str(self.username) + " BTC:" + str(self.btc_balance)
