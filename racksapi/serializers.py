@@ -25,9 +25,7 @@ class CustomRegisterSerializer(RegisterSerializer):
     username = serializers.CharField(max_length=20)
     type_of_account = serializers.ChoiceField(choices=ACCOUNT_TYPE_SELECTION)
 
-    """        
-  
-        """
+
 
     # Define transaction.atomic to rollback the save operation in case of error
     @transaction.atomic

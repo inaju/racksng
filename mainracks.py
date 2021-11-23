@@ -32,6 +32,9 @@ lightning = Lightning()
 onchain = Onchain()
 
 
+print(customer.list_customers())
+
+
 # print(customer.get_customer_by_email("to@gmail.com"))
 
 # print(customer.get_customer_by_email(email="godsstar360@gmail.com"))
@@ -288,6 +291,3 @@ class Tipping:
 # print(lightning.get_invoice(invoice_id=invoice_id))
 
 # # print(tip.tip_user(email="johnny@gmail.com", label="busd", sats=5000))
-
-
-
