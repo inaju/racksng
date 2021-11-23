@@ -1,1 +1,3 @@
-web: gunicorn racksng.wsgi --log-file -
+web: gunicorn racksng.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
