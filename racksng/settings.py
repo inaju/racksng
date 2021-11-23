@@ -25,8 +25,6 @@ SECRET_KEY = "django-insecure-ujb8vl&df2ht9+-cq8kql(x5q+6k)#e$@+thx1y)qp@#tt%i+d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -54,6 +52,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 ALLOWED_HOSTS = [
     "racksng.herokuapp.com",
     "127.0.0.1",
+    "racksnigeria.herokuapp.com",
 ]
 
 MIDDLEWARE = [
@@ -162,12 +161,10 @@ AUTHENTICATION_BACKENDS = [
 # ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.TokenAuthentication',
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.TokenAuthentication",
     ),
-   'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
-    ),
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.AllowAny",),
 }
 AUTH_USER_MODEL = "users.RacksUser"
 
