@@ -49,11 +49,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 CORS_ORIGIN_ALLOW_ALL = True
-ALLOWED_HOSTS = [
-    "racksng.herokuapp.com",
-    "127.0.0.1",
-    "racksnigeria.herokuapp.com",
-]
+ALLOWED_HOSTS = ["*"]
 
 MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
